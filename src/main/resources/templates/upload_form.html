@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>PrimeFaces Web Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<h:body>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" size="100" resizable="true">
+            <!-- Header Menu -->
+            <h:outputText value="Header Menu" />
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center">
+            <h1>Upload page</h1>
+            <div class="container" style="max-width: 500px">
+                <h3 class="mb-3">File Upload</h3>
+                <form
+                        id="uploadForm"
+                        method="post"
+                        th:action="@{/files/upload}"
+                        enctype="multipart/form-data">
+                    <input id="input-file" type="file" name="file"/>
+                    <button class="btn btn-sm btn-outline-success float-right" type="submit">
+                        Upload
+                    </button>
+                </form>
+            </div>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="south" size="50" resizable="true">
+            <!-- Footer -->
+            <h:outputText value="Footer" />
+        </p:layoutUnit>
+    </p:layout>
+</h:body>
+</html>
